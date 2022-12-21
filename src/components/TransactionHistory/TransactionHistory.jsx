@@ -1,37 +1,40 @@
+import css from "components/TransactionHistory/TransactionHistory.module.css";
 import PropTypes from 'prop-types';
-
 
 
 export const TransactionHistory = ({ items }) => {
     return (
-    <section className="statistics">
-        <table className="transaction-history">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                </tr>
-            </thead>
-            <tbody >
-                {items.map(item => (
-                    <tr key={item.id}>
-                        <td>{item.type}</td>
-                        <td>{item.amount}</td>
-                        <td>{item.currency}</td>
+    <section className="section">
+        <div className={`container ${css.containerTransactionHistory}`}>
+            <table className={css.table}>
+                <thead className={css.tHead}>
+                    <tr className={css.tr}>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Currency</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>  
+                </thead>
+                <tbody className={css.tBody}>
+                    {items.map(item => (
+                        <tr className={css.tr} key={item.id}>
+                            <td>{item.type}</td>
+                            <td>{item.amount}</td>
+                            <td>{item.currency}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>  
+        </div>
     </section>
     )
 }
 
 TransactionHistory.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired
+    item: PropTypes.arrayOf(PropTypes.exact({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string, 
+        currency: PropTypes.string,
+        amount: PropTypes.number
     })),
-    type: PropTypes.string, 
-    currency: PropTypes.string,
-    amount: PropTypes.number
+    
 }

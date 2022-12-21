@@ -1,0 +1,33 @@
+.containerTransactionHistory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.table {
+    border-collapse: collapse;
+    min-width: 500px;
+    text-align: center;
+    background-color: white;
+
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 4px 5px -1px rgb(0 0 0 / 75%)
+}
+
+.tHead {
+    color: white;
+    background-color: blue;
+}
+
+.tr {
+    height: 35px;
+}
+
+.tBody > .tr:nth-child(2n) {
+    background-color: rgb(228, 228, 228);
+}
+
