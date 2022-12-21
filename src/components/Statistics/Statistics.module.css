@@ -31,3 +31,11 @@
     height: 70px;
 
 }
+
+.label, .percentage {
+ color: white;
+}
+
+.percentage {
+    font-size: large;
+}
